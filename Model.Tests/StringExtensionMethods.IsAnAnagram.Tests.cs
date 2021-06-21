@@ -125,7 +125,7 @@ namespace Model.Tests
         {
             // Arrange
             var wordOne = "Aibohphobia"; // Deliberate white space. Do not remove.
-            var wordTwo = "Aibohphobia ";
+            var wordTwo = "Aibohphobia "; // Deliberate white space. Do not remove. 
 
             // Act
             var sutResult = wordOne.IsAnAnagram(wordTwo);
@@ -139,13 +139,41 @@ namespace Model.Tests
         {
             // Arrange
             var wordOne = " Aibohphobia"; // Deliberate white space. Do not remove.
-            var wordTwo = "Aibohphobia ";
+            var wordTwo = "Aibohphobia "; // Deliberate white space. Do not remove.
 
             // Act
             var sutResult = wordOne.IsAnAnagram(wordTwo);
 
             // Assert 
             sutResult.Should().BeTrue("because the words are anagrams - regardless of whitespace.");
+        }
+
+        [Fact]
+        public void IsAnAnagram_Should_Return_True_When_NumbersAreAnAnagram()
+        {
+            // Arrange
+            var wordOne = "123";
+            var wordTwo = "321";
+
+            // Act
+            var sutResult = wordOne.IsAnAnagram(wordTwo);
+
+            // Assert 
+            sutResult.Should().BeTrue("because the numbers are anagrams.");
+        }
+
+        [Fact]
+        public void IsAnAnagram_Should_Return_False_When_NumbersAreNotAnAnagram()
+        {
+            // Arrange
+            var wordOne = "123";
+            var wordTwo = "3213";
+
+            // Act
+            var sutResult = wordOne.IsAnAnagram(wordTwo);
+
+            // Assert 
+            sutResult.Should().BeFalse("because the words are anagrams - regardless of whitespace.");
         }
     }
 }

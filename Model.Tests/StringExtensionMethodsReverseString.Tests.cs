@@ -73,5 +73,18 @@ namespace Model.Tests
             reverseResult.Should().Be(word, "because empty strings shouldnt cause problems");
         }
 
+        [Fact]
+        public void ReverseString_Should_HandleInt()
+        {
+            // Arrange
+            var word = "123";
+
+            // Act
+            var reverseResult = word.ReverseString();
+
+            // Assert
+            reverseResult.Should().Be("321", "because numbers are people too!");
+        }
+
     }
 }
