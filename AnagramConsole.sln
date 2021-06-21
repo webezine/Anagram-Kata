@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnagramConsole", "AnagramCo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{025D0003-1CEB-4A31-991B-33B1EF0EF0E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{8C5F1603-6086-4526-BE45-64DD3A3D98E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{025D0003-1CEB-4A31-991B-33B1EF0EF0E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{025D0003-1CEB-4A31-991B-33B1EF0EF0E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{025D0003-1CEB-4A31-991B-33B1EF0EF0E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C5F1603-6086-4526-BE45-64DD3A3D98E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C5F1603-6086-4526-BE45-64DD3A3D98E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C5F1603-6086-4526-BE45-64DD3A3D98E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C5F1603-6086-4526-BE45-64DD3A3D98E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
