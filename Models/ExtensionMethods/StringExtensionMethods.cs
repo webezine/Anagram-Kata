@@ -16,7 +16,7 @@ namespace AnagramConsole.Models.ExtensionMethods
         public static bool IsAnAnagram(this string s1, string s2)
         {
             // Strip all white space from string to allow for multiple word anagrams - not just one word.
-            var wordOne = String.Concat(s1.Where(c => !Char.IsWhiteSpace(c)));
+            var wordOne = string.Concat(s1.Where(c => !Char.IsWhiteSpace(c)));
             var wordTwo = string.Concat(s2.Where(c => !Char.IsWhiteSpace(c)));
 
             // Scenario 1 : Empty strings - not an anagram...
