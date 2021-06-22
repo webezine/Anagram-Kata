@@ -10,9 +10,9 @@ namespace DAL.Queries
 {
     public class AnagramQueryStub : IAnagramQuery
     {
-        private readonly ILoggerAdapter<AnagramQuery> _logger;
+        private readonly ILoggerAdapter<AnagramQueryStub> _logger;
 
-        public AnagramQueryStub(ILoggerAdapter<AnagramQuery> logger)
+        public AnagramQueryStub(ILoggerAdapter<AnagramQueryStub> logger)
         {
             _logger = logger;
             _result = new List<AnagramResult>
@@ -35,16 +35,22 @@ namespace DAL.Queries
 
         public async Task<AnagramResult> GetAnagramByIdAsync(int id)
         {
+            _logger.Information($"AnagramQuery > GetAnagramByIdAsync >> Getting anagram that match the id {id}...");
+
             return _result.FirstOrDefault(r => r.Id == id);
         }
 
         public async Task<List<AnagramResult>> GetAnagramsAsync()
         {
+            _logger.Information($"AnagramQuery > GetAnagramsAsync >> Getting list of anagram results...");
+
             return _result;
         }
 
         public async Task<List<AnagramResult>> GetAnagramsByWordAsync(string word)
         {
+            _logger.Information($"AnagramQuery > GetAnagramsByWordAsync >> Getting list of anagram that match the word {word}...");
+
             return _result.Where(s => string.Equals(s.WordOne, word, StringComparison.OrdinalIgnoreCase) || 
                 string.Equals(s.WordTwo, word, StringComparison.OrdinalIgnoreCase)).ToList();
         }

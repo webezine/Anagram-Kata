@@ -37,14 +37,14 @@ namespace AnagramConsole
             });
 
             services.AddSingleton<ConsoleApplication>();
-            services.AddScoped<IAnagramChecker, AnagramChecker>();
+            services.AddSingleton<IAnagramChecker, AnagramChecker>();
 
             #if (DEBUG || TEST)
-                services.AddScoped<IAnagramQuery, AnagramQueryStub>();
-                services.AddScoped<ILoggerAdapter<AnagramQueryStub>, LoggerAdapter<AnagramQueryStub>>();
+                services.AddSingleton<IAnagramQuery, AnagramQueryStub>();
+                services.AddSingleton<ILoggerAdapter<AnagramQueryStub>, LoggerAdapter<AnagramQueryStub>>();
             #else
-                services.AddScoped<IAnagramQuery, AnagramQuery>();
-                services.AddScoped<ILoggerAdapter<AnagramQuery>, LoggerAdapter<AnagramQuery>>();
+                services.AddSingleton<IAnagramQuery, AnagramQuery>();
+                services.AddSingleton<ILoggerAdapter<AnagramQuery>, LoggerAdapter<AnagramQuery>>();
             #endif
 
             _serviceProvider = services.BuildServiceProvider(true);
@@ -56,6 +56,7 @@ namespace AnagramConsole
             {
                 return;
             }
+
             if (_serviceProvider is IDisposable)
             {
                 ((IDisposable)_serviceProvider).Dispose();
