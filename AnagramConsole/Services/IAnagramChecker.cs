@@ -1,7 +1,9 @@
-﻿namespace AnagramConsole.Services
+﻿using System.Threading.Tasks;
+
+namespace AnagramConsole.Services
 {
     public interface IAnagramChecker
     {
-        void FetchAndOutputAnagramResults();
+        Task FetchAndOutputAnagramResults();
     }
 }
